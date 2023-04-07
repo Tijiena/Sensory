@@ -1,32 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class ChangeScene : MonoBehaviour
+public class changeScene : MonoBehaviour
+
 {
-    public GameObject UiObject;
-    public GameObject cube;
-
-    void Start()
+    [SerializeField]
+    private string nextSceneName;
+    // Start is called before the first frame update
+    private void OnCollisionStay(Collision collision)
     {
-        UiObject.SetActive(false);
+        if (collision.gameObject.CompareTag("Player"))
+            SceneManager.LoadScene(nextSceneName);
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-            UiObject.SetActive(true);
-        }
-    }
-    void Update()
-    {
-
-    }
-
-    void OnTriggerExit(Collider other)
-    {
-        UiObject.SetActive(false);
-
-    }
-
 }
