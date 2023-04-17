@@ -7,15 +7,16 @@ using UnityEngine.SceneManagement;
 
 public class nextScene : MonoBehaviour
 {
-    public string SceneToLoad;
+    [SerializeField]
+    private string nextSceneName;
 
-    void onTriggerEnter()
+    void OnTriggerEnter()
     {
 
-        {
-            SceneManager.LoadScene("HappyTrainCar");
+        
+            SceneManager.LoadScene(nextSceneName);
             Debug.Log("work");
-        }
+        
     }
 }
 
