@@ -18,9 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/trippycar.unity
     guid: aa03eda3b1f1da946abd4d3103b5a3bc
   - enabled: 1
-    path: Assets/Scenes/Tunnel .unity
-    guid: 8531d359fdef34a4cb4bf18eb9206b82
-  - enabled: 1
     path: Assets/Scenes/scene1.unity
     guid: 560cbeb5405ed411cbf608e58dd5b38d
+  - enabled: 1
+    path: Assets/Scenes/Tunnel .unity
+    guid: 8531d359fdef34a4cb4bf18eb9206b82
   m_configObjects: {}
