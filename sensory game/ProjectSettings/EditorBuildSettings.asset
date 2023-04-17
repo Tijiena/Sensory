@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TEST.unity
     guid: 108f095571da2441083f2e2286b7941c
+  - enabled: 1
+    path: Assets/Scenes/trippycar.unity
+    guid: aa03eda3b1f1da946abd4d3103b5a3bc
   m_configObjects: {}
