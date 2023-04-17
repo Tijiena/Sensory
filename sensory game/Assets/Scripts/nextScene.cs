@@ -7,9 +7,6 @@ using UnityEngine.SceneManagement;
 
 public class nextScene : MonoBehaviour
 {
-
-    //public GameObject UiObject;
-    //public GameObject cube;
     public string SceneToLoad;
 
     void onTriggerEnter()
