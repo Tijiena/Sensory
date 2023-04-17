@@ -16,7 +16,7 @@ public class nextScene : MonoBehaviour
     {
 
         {
-            SceneManager.LoadScene(SceneToLoad);
+            SceneManager.LoadScene("HappyTrainCar");
         }
     }
 }

@@ -5,8 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class nextScene2 : MonoBehaviour
 {
-    public void LoadScene(string sceneName)
+    [SerializeField]
+    private string nextSceneName;
+    // Start is called before the first frame update
+    private void OnCollisionStay(Collision collision)
     {
-        SceneManager.LoadScene(sceneName);
+        if (collision.gameObject.CompareTag("Player"))
+            SceneManager.LoadScene(nextSceneName);
     }
 }
+
