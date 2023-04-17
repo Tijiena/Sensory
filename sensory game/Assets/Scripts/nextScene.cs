@@ -1,22 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 
 
 public class nextScene : MonoBehaviour
-{ 
+{
 
-public GameObject UiObject;
-public GameObject cube;
-public string SceneToLoad;
+    //public GameObject UiObject;
+    //public GameObject cube;
+    public string SceneToLoad;
 
-void onTriggerEnter()
+    void onTriggerEnter()
     {
-        SceneManager.LoadScene(SceneToLoad);
+
+        {
+            SceneManager.LoadScene(SceneToLoad);
+        }
     }
+}
 
 //    void Start()
 //{

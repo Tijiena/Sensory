@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/GeorgiaScene.unity
+    guid: 7e08537f89cce4dfa9fc37f033f81ef6
+  - enabled: 1
+    path: Assets/Scenes/HappyTrainCar.unity
+    guid: c5f00dca58404944f8813b53fa1fccc9
+  - enabled: 1
+    path: Assets/Scenes/TEST.unity
+    guid: 108f095571da2441083f2e2286b7941c
   m_configObjects: {}
