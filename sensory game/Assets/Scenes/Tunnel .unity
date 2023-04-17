@@ -4603,10 +4603,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 648010017}
+  - component: {fileID: 648010021}
   - component: {fileID: 648010014}
   - component: {fileID: 648010018}
-  - component: {fileID: 648010020}
-  - component: {fileID: 648010019}
   m_Layer: 0
   m_Name: trigger
   m_TagString: Untagged
@@ -4655,35 +4654,48 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneToLoad: HappyTrainCar
---- !u!114 &648010019
-MonoBehaviour:
+--- !u!23 &648010021
+MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 648010013}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d76039d8516a432393be23bdfd59203, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nextSceneName: HappyTrainCar
---- !u!54 &648010020
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 648010013}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &648350540 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1000011505821352, guid: 5d35b4cf3062ca444a2fcf228b70224b, type: 3}
@@ -12625,8 +12637,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1684385175}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1324.4, y: 66.26, z: 38.771}
+  m_LocalRotation: {x: -0, y: -0.6764398, z: -0, w: 0.73649794}
+  m_LocalPosition: {x: -1326.2, y: 66.26, z: 35.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12635,7 +12647,7 @@ Transform:
   - {fileID: 927826202}
   m_Father: {fileID: 0}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -85.132, z: 0}
 --- !u!1 &1687680446 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2252378379690268833, guid: 5d35b4cf3062ca444a2fcf228b70224b, type: 3}
