@@ -9,41 +9,14 @@ public class nextScene : MonoBehaviour
 {
     [SerializeField]
     private string nextSceneName;
+    public string exitName;
 
     void OnTriggerEnter()
     {
 
-        
+        PlayerPrefs.SetString("LastExitName", exitName);
             SceneManager.LoadScene(nextSceneName);
             Debug.Log("work");
         
     }
 }
-
-//    void Start()
-//{
-
-
-
-
-//    UiObject.SetActive(false);
-//}
-//private void OnTriggerEnter(Collider other)
-//{
-//    if (other.tag == "Player")
-//    {
-//        UiObject.SetActive(true);
-//    }
-//}
-//void Update()
-//{
-
-//}
-
-//    //void OnTriggerExit(Collider other)
-//    //{
-//    //    UiObject.SetActive(false);
-
-//    //}
-
-//}
