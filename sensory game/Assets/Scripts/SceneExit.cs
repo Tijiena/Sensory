@@ -7,9 +7,10 @@ public class SceneExit : MonoBehaviour
 {
     public string sceneToLoad;
 
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter()
     {
-        SceneManager.LoadScene(sceneToLoad);
+        SceneManager.LoadScene("sceneToLoad");
+        Debug.Log("working");
     }
 
 
