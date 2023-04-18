@@ -21,8 +21,10 @@
 #if USE_TMP
 using TMPro;
 #endif
+using System;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Object = UnityEngine.Object;
 #if USE_GUI
 using UnityEngine.UI;
 #endif
@@ -88,6 +90,9 @@ namespace Hertzole.GoldPlayer
         [FormerlySerializedAs("m_SprintingLabelDisplay")]
         [FormerlySerializedAs("sprintingLabelDisplay")]
         private LabelDisplayType staminaLabelDisplay = LabelDisplayType.Percentage;
+        [SerializeField] 
+        [Tooltip("The amount of stamina change required before the label is updated.")]
+        private float staminaLabelChangeRequired = 0.1f;
         [SerializeField]
         [Tooltip("The format of the stamina percentage value.")]
         private string staminaPercentageFormat = "F0";
@@ -141,6 +146,8 @@ namespace Hertzole.GoldPlayer
         public TextMeshProUGUI StaminaLabelPro { get { return staminaLabelPro; } set { staminaLabelPro = value; } }
 #endif
 #endif
+	    /// <summary> The amount of stamina change required before the label is updated. </summary>
+	    public float StaminaLabelChangeRequired { get { return staminaLabelChangeRequired; } set { staminaLabelChangeRequired = value; } }
         /// <summary> The format of the stamina percentage value. </summary>
         public string PercentageFormat { get { return staminaPercentageFormat; } set { staminaPercentageFormat = value; } }
         /// <summary> The format of the current stamina value. </summary>
@@ -170,7 +177,7 @@ namespace Hertzole.GoldPlayer
         public GoldPlayerController Player
         {
             // If the player is null, and auto find is on, find the player.
-            get { if (!player && autoFindPlayer) { player = FindObjectOfType<GoldPlayerController>(); } return player; }
+            get { if (!player && autoFindPlayer) { player = FindFirstObject<GoldPlayerController>(); } return player; }
             set { SetPlayer(value); }
         }
 
@@ -180,7 +187,7 @@ namespace Hertzole.GoldPlayer
         protected GoldPlayerInteraction PlayerInteraction
         {
             // If the player interaction is null, and auto find is on, find the player interaction.
-            get { if (!playerInteraction && autoFindInteraction) { playerInteraction = FindObjectOfType<GoldPlayerInteraction>(); } return playerInteraction; }
+            get { if (!playerInteraction && autoFindInteraction) { playerInteraction = FindFirstObject<GoldPlayerInteraction>(); } return playerInteraction; }
             set { playerInteraction = value; }
         }
 #endif
@@ -302,7 +309,7 @@ namespace Hertzole.GoldPlayer
             }
             else if (autoFindPlayer)
             {
-                playerInteraction = FindObjectOfType<GoldPlayerInteraction>();
+                playerInteraction = FindFirstObject<GoldPlayerInteraction>();
             }
         }
 #endif
@@ -315,6 +322,8 @@ namespace Hertzole.GoldPlayer
 #endif
         }
 
+        private float previousStamina = 0;
+        
         protected virtual void SprintingUpdate()
         {
 #if USE_GUI
@@ -340,19 +349,22 @@ namespace Hertzole.GoldPlayer
                         throw new System.NotImplementedException("There's no support for progress bar type '" + staminaBarType + "' in GoldPlayerUI!");
                 }
 
-                string sprintString = GetLabel(staminaLabelDisplay, Player.Movement.Stamina.CurrentStamina, Player.Movement.Stamina.MaxStamina, staminaDirectValueFormat, staminaDirectMaxFormat, staminaPercentageFormat);
-
-                if (staminaLabel != null)
+                if (Math.Abs(Player.Movement.Stamina.CurrentStamina - previousStamina) > staminaLabelChangeRequired)
                 {
-                    staminaLabel.text = sprintString;
-                }
+	                previousStamina = Player.Movement.Stamina.CurrentStamina;
+					string sprintString = GetLabel(staminaLabelDisplay, Player.Movement.Stamina.CurrentStamina, Player.Movement.Stamina.MaxStamina, staminaDirectValueFormat, staminaDirectMaxFormat, staminaPercentageFormat);
+					if (staminaLabel != null)
+					{
+						staminaLabel.text = sprintString;
+					}
 
 #if USE_TMP
-                if (staminaLabelPro != null)
-                {
-                    staminaLabelPro.text = sprintString;
-                }
+					if (staminaLabelPro != null)
+					{
+						staminaLabelPro.text = sprintString;
+					}
 #endif
+                }
             }
 #else
             Debug.LogWarning("GoldPlayerUI is being used but there's no UGUI in this project!");
@@ -438,6 +450,15 @@ namespace Hertzole.GoldPlayer
                     return string.Empty;
 #endif
             }
+        }
+
+        private static T FindFirstObject<T>() where T : Object
+        {
+#if UNITY_2023_1_OR_NEWER
+	        return FindFirstObjectByType<T>();
+#else
+	        return FindObjectOfType<T>();
+#endif
         }
 
 #if UNITY_EDITOR
