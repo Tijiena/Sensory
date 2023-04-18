@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class Fly : MonoBehaviour {
@@ -99,4 +99,5 @@ public class Fly : MonoBehaviour {
 	public void resetRotation(Vector3 lookAt) {
 		transform.LookAt(lookAt);
 	}
+
 }
