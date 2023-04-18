@@ -7,17 +7,16 @@ using UnityEngine.SceneManagement;
 
 public class nextScene : MonoBehaviour
 {
+    [SerializeField]
+    private string nextSceneName;
 
-    //public GameObject UiObject;
-    //public GameObject cube;
-    public string SceneToLoad;
-
-    void onTriggerEnter()
+    void OnTriggerEnter()
     {
 
-        {
-            SceneManager.LoadScene(SceneToLoad);
-        }
+        
+            SceneManager.LoadScene(nextSceneName);
+            Debug.Log("work");
+        
     }
 }
 
