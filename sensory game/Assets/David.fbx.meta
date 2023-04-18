@@ -9,27 +9,7 @@ ModelImporter:
   - first:
       74: 6165553400957861818
     second: Armature|Armature|mixamo.com|Layer0.001
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Ch28_body
-    second: {fileID: 2100000, guid: 06e2101afb29bcf4ab0e2f52ab1207ab, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Ch28_body.001
-    second: {fileID: 2100000, guid: 0844f212a883a0e48a83a554ca1fff85, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Ch28_hair
-    second: {fileID: 2100000, guid: ed40087870072484199586fb2085e91a, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Ch28_hair.001
-    second: {fileID: 2100000, guid: aa89bb35aa29783438dfe6ec68d4fb66, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
