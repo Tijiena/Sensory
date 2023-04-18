@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0008510157, g: 0.0018434842, b: 0.054547586, a: 1}
+  m_IndirectSpecularColor: {r: 0.0007200191, g: 0.0018433576, b: 0.05432608, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -279,9 +279,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 116127928}
-  - component: {fileID: 116127927}
   - component: {fileID: 116127930}
-  - component: {fileID: 116127929}
+  - component: {fileID: 116127931}
   m_Layer: 0
   m_Name: trigger
   m_TagString: Untagged
@@ -289,26 +288,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &116127927
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 116127926}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &116127928
 Transform:
   m_ObjectHideFlags: 0
@@ -317,26 +296,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 116127926}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1036, y: 65, z: 68}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -738.81, y: 60.1, z: 67.03}
+  m_LocalScale: {x: 1.4331, y: 1.4331, z: 1.4331}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &116127929
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 116127926}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd52b8c8f89f44a2cb1eddc1e3745f77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LevelName: Tunnel
 --- !u!65 &116127930
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -350,6 +316,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &116127931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116127926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f53864887b1ed4d49bceea78be2e5705, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneToLoad: tunnel
 --- !u!1 &170537747
 GameObject:
   m_ObjectHideFlags: 0
@@ -1353,13 +1332,13 @@ PlayableDirector:
   - key: {fileID: -3695985751686426627, guid: 39cc69a2b83bd4f89bf8ed7cf84f9119, type: 2}
     value: {fileID: 0}
   - key: {fileID: 2513029569163201005, guid: 39cc69a2b83bd4f89bf8ed7cf84f9119, type: 2}
-    value: {fileID: 116127927}
+    value: {fileID: 0}
   - key: {fileID: 1990047767668713858, guid: 39cc69a2b83bd4f89bf8ed7cf84f9119, type: 2}
     value: {fileID: 0}
   - key: {fileID: 1516476955816477685, guid: 39cc69a2b83bd4f89bf8ed7cf84f9119, type: 2}
     value: {fileID: 0}
   - key: {fileID: 8229917587183954672, guid: 39cc69a2b83bd4f89bf8ed7cf84f9119, type: 2}
-    value: {fileID: 116127927}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &507473177
@@ -4313,6 +4292,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ch28_nonPBR
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 154b05ec1448847638fad582c656588c, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 154b05ec1448847638fad582c656588c, type: 3}
 --- !u!4 &1959989575 stripped
@@ -4345,7 +4328,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!1 &2029991591
 GameObject:
   m_ObjectHideFlags: 0
