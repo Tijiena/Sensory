@@ -152,7 +152,7 @@ MonoBehaviour:
     value: 3
   lumContrib:
     overrideState: 1
-    value: 0.247
+    value: 0.29
 --- !u!114 &-483631074796882754
 MonoBehaviour:
   m_ObjectHideFlags: 3
