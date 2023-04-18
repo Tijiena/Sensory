@@ -85,11 +85,7 @@ namespace Hertzole.GoldPlayer
         private bool useCinemachine = false;
         [SerializeField]
         [Tooltip("The virtual camera that the FOV kick should be applied to.")]
-#if GOLD_PLAYER_CINEMACHINE_3
-        private Cinemachine.CinemachineCamera targetVirtualCamera = null;
-#else
         private Cinemachine.CinemachineVirtualCamera targetVirtualCamera = null;
-        #endif
 #endif
         [SerializeField]
         [Tooltip("The camera that the FOV kick should be applied to.")]
@@ -255,11 +251,7 @@ namespace Hertzole.GoldPlayer
         /// <summary> Allows you to use Cinemachine virtual camera instead of a direct reference to a camera. </summary>
         public bool UseCinemachine { get { return useCinemachine; } set { useCinemachine = value; } }
         /// <summary> The virtual camera that the FOV kick should be applied to. </summary>
-        #if GOLD_PLAYER_CINEMACHINE_3
-        public Cinemachine.CinemachineCamera TargetVirtualCamera { get { return targetVirtualCamera; } set { targetVirtualCamera = value; } }
-#else
         public Cinemachine.CinemachineVirtualCamera TargetVirtualCamera { get { return targetVirtualCamera; } set { targetVirtualCamera = value; } }
-        #endif
 #endif
 
         /// <summary> The target camera field of view. </summary>
@@ -267,9 +259,7 @@ namespace Hertzole.GoldPlayer
         {
             get
             {
-#if GOLD_PLAYER_CINEMACHINE_3
-                return useCinemachine ? targetVirtualCamera.Lens.FieldOfView : targetCamera.fieldOfView;
-#elif GOLD_PLAYER_CINEMACHINE
+#if GOLD_PLAYER_CINEMACHINE
                 return useCinemachine ? targetVirtualCamera.m_Lens.FieldOfView : targetCamera.fieldOfView;
 #else
                 return targetCamera.fieldOfView;
@@ -280,11 +270,7 @@ namespace Hertzole.GoldPlayer
 #if GOLD_PLAYER_CINEMACHINE
                 if (useCinemachine)
                 {
-#if GOLD_PLAYER_CINEMACHINE_3
-                    targetVirtualCamera.Lens.FieldOfView = value;
-#else
                     targetVirtualCamera.m_Lens.FieldOfView = value;
-#endif
                 }
                 else
                 {
@@ -497,11 +483,13 @@ namespace Hertzole.GoldPlayer
                     {
                         zoomTimer = 0;
                         zooming = true;
+                        Debug.Log(CameraFieldOfView);
                         originalZoomFieldOfView = zoomFieldOfView + fieldOfViewKick.FieldOfViewDifference;
                         if (fieldOfViewKick.EnableFOVKick && originalZoomFieldOfView > fieldOfViewKick.TargetFieldOfView)
                         {
                             originalZoomFieldOfView = fieldOfViewKick.TargetFieldOfView;
                         }
+                        Debug.Log($"START ZOOM {originalZoomFieldOfView}");
                     }
                 
                     // As long as the zoom timer is less than the zoom in time or the field of view is more than the target zoom, 

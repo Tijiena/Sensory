@@ -1,18 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
+
 
 public class nextScene : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    private string nextSceneName;
+    public string exitName;
 
-    // Update is called once per frame
-    void Update()
+    void OnTriggerEnter()
     {
+
+        PlayerPrefs.SetString("LastExitName", exitName);
+            SceneManager.LoadScene(nextSceneName);
+            Debug.Log("work");
         
     }
 }
