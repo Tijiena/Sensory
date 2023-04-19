@@ -9,10 +9,14 @@ public class nextScene2 : MonoBehaviour
     [SerializeField]
     private string nextSceneName;
     // Start is called before the first frame update
-    private void OnCollisionEnter(Collision collision)
+
+
+   void Update()
     {
-        if (collision.gameObject.CompareTag("Player"))
-            SceneManager.LoadScene(nextSceneName);
+        if (Input.GetKeyDown(KeyCode.P)){
+            SceneManager.LoadScene("tunnel");
+        }
+           
         
        
     }
