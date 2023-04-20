@@ -9468,7 +9468,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 136bd0bb63ce53e4ca43c3a09b8508aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextSceneName: tunnel
+  nextSceneName: trippycar
 --- !u!1 &1627289055
 GameObject:
   m_ObjectHideFlags: 0
